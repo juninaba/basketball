@@ -1,0 +1,10 @@
+<div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel" data-interval="4000" data-wrap="true">
+  <div class="carousel-inner">
+    <%= render partial: 'slide' %>
+  </div>
+</div>
+<div class="card-deck">
+  <% @users.each do |user| %>
+    <%= render partial: 'user', locals: {user: user} %>
+  <% end %>
+</div>

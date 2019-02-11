@@ -1,0 +1,14 @@
+<%= render partial: 'users/navbar' %>
+<div class="form_form">
+<h1>Chat room</h1>
+
+
+<div id="messages">
+  <%= render @messages %>
+</div>
+<form>
+  <label>メッセージを入力:</label><br>
+  <input type="text" data-behavior="room_speaker">
+</form>
+
+

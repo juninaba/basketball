@@ -1,0 +1,23 @@
+<div class="card">
+    <% if user.avatar .attached? %>
+      <%= image_tag user.avatar, :size => '200x200', class: 'maru' %>
+    <% else %>
+      <img src="http://schoolshop-lab.jp/wp-content/uploads/2018/11/240ec862387d03003cb4c41cd93cb0be.png" alt="画像はありません" width="200" height="200" class="maru man">
+    <% end %>
+  <div class="card-body text-center">
+    <h5 class="card-title"><%= user.nickname %>(<%= user.gender %>バス)</h5>
+    <p class="card-text">チーム名・学校名: <%= user.team %><p>
+    <p class="card-text">都道府県: <%= user.prefecture.name %><p>
+  </div>
+  <div class="card-footer">
+    <% if user_signed_in? %>
+    <div class="text-center">
+      <% if current_user.id == user.id %>
+        <a href="/users/<%= current_user.id %>" class="btn btn-primary">マイページ</a>
+      <% else %>
+        <a href="/users/<%= user.id %>" class="btn btn-primary">詳細</a>
+      <% end %>
+    </div>
+    <% end %>
+  </div>
+</div>

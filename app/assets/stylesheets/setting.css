@@ -1,0 +1,67 @@
+.carousel-item {
+  position: relative;
+}
+
+.title {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  color: #fff;
+  font-size: 35px;
+}
+
+.card-deck {
+  padding: 0 100px;
+  margin-bottom: 40px;
+  margin-top: 30px;
+}
+
+.card {
+  margin: 40px;
+}
+
+.card-title {
+  font-weight: bold;
+}
+
+.dropdown-menu {
+  width: 300px;
+}
+
+.form-inline {
+  padding-left: 10px;
+}
+
+.list_item {
+  color: #212529;
+}
+
+.maru {
+  border: solid #bbb;
+  border-radius: 100px;
+  margin: 10px auto;
+}
+
+.card-deck .card:nth-child(n+5){
+  display: none;
+}
+
+.contents {
+  margin: 40px 0 40px 200px;
+}
+
+.contents p {
+  font-weight: bold;
+}
+
+.form_form {
+  margin: 40px 100px;
+}
+
+.search__query {
+  margin-right: 5px;
+}
+
+.search-title {
+  margin-top: 30px;
+}
