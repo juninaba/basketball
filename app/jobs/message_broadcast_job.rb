@@ -1,4 +1,5 @@
 class MessageBroadcastJob < ApplicationJob
+  # 非同期でブロードキャストするためのMessageBroadcastジョブを作成
   queue_as :default
 
   def perform(message)

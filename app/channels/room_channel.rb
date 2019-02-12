@@ -1,4 +1,5 @@
 class RoomChannel < ApplicationCable::Channel
+  #speakアクションを持つRoomチャンネル
   #サーバーサイドの処理を受け持つチャンネル
   def subscribed
     stream_from "room_channel"
@@ -9,6 +10,7 @@ class RoomChannel < ApplicationCable::Channel
   end
 
   def speak(data)
-    Message.create! content: data['message']
+    # クライアントから送信されたmessageデータを受け取り、DBに保存
+    Message.create! content: data['message'], user_id: current_user.id
   end
 end

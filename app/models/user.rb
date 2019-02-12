@@ -5,8 +5,11 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   belongs_to :prefecture
+  #ユーザーが削除されたら関連するdetailも削除される
   has_one :detail, dependent: :destroy
   has_many :messages
+  # has_many :room_users
+  # has_many :rooms, through: :room_users
   has_one_attached :avatar
 
   validates :name, presence: true
@@ -18,7 +21,7 @@ class User < ApplicationRecord
   has_many :following_relationships, foreign_key: "follower_id", class_name: "Relationship", dependent: :destroy
   has_many :followings, through: :following_relationships
   has_many :follower_relationships, foreign_key: "following_id", class_name: "Relationship", dependent: :destroy
-   has_many :followers, through: :follower_relationships
+  has_many :followers, through: :follower_relationships
 
   def following?(other_user)
     following_relationships.find_by(following_id: other_user.id)
