@@ -1,4 +1,5 @@
-App.room = App.cable.subscriptions.create "RoomChannel",
+document.addEventListener 'turbolinks:load', ->
+App.room = App.cable.subscriptions.create { channel: "RoomChannel", room_id: $('#messages').data('room_id') },
   connected: ->
     # Called when the subscription is ready for use on the server
 

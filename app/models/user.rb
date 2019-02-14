@@ -8,8 +8,8 @@ class User < ApplicationRecord
   #ユーザーが削除されたら関連するdetailも削除される
   has_one :detail, dependent: :destroy
   has_many :messages
-  # has_many :room_users
-  # has_many :rooms, through: :room_users
+  has_many :room_users
+  has_many :rooms, through: :room_users
   has_one_attached :avatar
 
   validates :name, presence: true
