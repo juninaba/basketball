@@ -6,12 +6,13 @@ Rails.application.routes.draw do
 
   resources :users do
     member do
+      # ユーザーidが含まれているているURLを扱えるようになる
      get :following, :followers
     end
     resources :details, only: [:index, :new, :create, :edit, :update]
   end
 
-  resources :rooms, only: [:show]
+  resources :rooms, only: [:show, :index, :new]
 
   resources :relationships, only: [:create, :destroy]
   # mount ActionCable.server => '/cable'

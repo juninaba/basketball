@@ -11,6 +11,7 @@
   </div>
   <div class="card-footer">
     <% if user_signed_in? %>
+    <!-- text-centerはcssでのtext-align: center; -->
     <div class="text-center">
       <% if current_user.id == user.id %>
         <a href="/users/<%= current_user.id %>" class="btn btn-primary">マイページ</a>
