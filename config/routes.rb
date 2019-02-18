@@ -12,7 +12,7 @@ Rails.application.routes.draw do
     resources :details, only: [:index, :new, :create, :edit, :update]
   end
 
-  resources :rooms, only: [:show, :index, :new]
+  resources :rooms, only: [:show]
 
   resources :relationships, only: [:create, :destroy]
   # mount ActionCable.server => '/cable'

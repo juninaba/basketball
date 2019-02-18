@@ -2,7 +2,7 @@
     <% if user.avatar .attached? %>
       <%= image_tag user.avatar, :size => '200x200', class: 'maru' %>
     <% else %>
-      <img src="http://schoolshop-lab.jp/wp-content/uploads/2018/11/240ec862387d03003cb4c41cd93cb0be.png" alt="画像はありません" width="200" height="200" class="maru man">
+      <img src="https://myoji-yurai.net/profileImages/noimage.png" alt="画像はありません" width="200" height="200" class="maru man">
     <% end %>
   <div class="card-body text-center">
     <h5 class="card-title"><%= user.nickname %>(<%= user.gender %>バス)</h5>
