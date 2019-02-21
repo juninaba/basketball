@@ -54,3 +54,23 @@ Prefecture.create [
   { name: '鹿児島県' },
   { name: '沖縄県' }
 ]
+User.create [
+  {
+    email: 'test@mail.com',
+    encrypted_password: '$2a$11$fvx35Opo/y5ADHSwQxqb2.LRgZRTeZ397zhafgbKTmXg5wNF95gxW',
+    name: 'test1',
+    nickname: 'test2',
+    team: '北海道バスケット',
+    gender: '男',
+    prefecture: Prefecture.first
+  },
+  {
+    email: 'test2@mail.com',
+    encrypted_password: '$2a$11$fkLAr5HRsgFjy1.ocaGKwO2vlVtL3eUhlZ4MjXWgEj8ypsWcHQz3O',
+    name: 'test2',
+    nickname: 'test2',
+    team: '青森バスケット',
+    gender: '男',
+    prefecture: Prefecture.second
+  }
+]
