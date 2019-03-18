@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_18_114050) do
+ActiveRecord::Schema.define(version: 2019_03_18_062443) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -43,16 +43,6 @@ ActiveRecord::Schema.define(version: 2019_02_18_114050) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "messages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.text "content"
-    t.bigint "user_id", null: false
-    t.bigint "room_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["room_id"], name: "index_messages_on_room_id"
-    t.index ["user_id"], name: "index_messages_on_user_id"
-  end
-
   create_table "prefectures", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -69,11 +59,24 @@ ActiveRecord::Schema.define(version: 2019_02_18_114050) do
     t.index ["following_id"], name: "index_relationships_on_following_id"
   end
 
+  create_table "room_messages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "room_id", null: false
+    t.integer "user_id", null: false
+    t.string "message", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "room_users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "room_id", null: false
+    t.integer "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "rooms", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "relationship_id", null: false
-    t.index ["relationship_id"], name: "index_rooms_on_relationship_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -95,8 +98,5 @@ ActiveRecord::Schema.define(version: 2019_02_18_114050) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "messages", "rooms"
-  add_foreign_key "messages", "users"
-  add_foreign_key "rooms", "relationships"
   add_foreign_key "users", "prefectures"
 end
