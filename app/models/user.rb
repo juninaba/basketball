@@ -9,6 +9,8 @@ class User < ApplicationRecord
   has_one :detail, dependent: :destroy
   has_many :messages
   has_one_attached :avatar
+  has_many :room_messages
+  has_many :room_users
 
   validates :name, presence: true
   validates :prefecture_id, presence: :true

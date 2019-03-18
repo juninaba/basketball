@@ -1,0 +1,24 @@
+<%= render partial: 'users/navbar' %>
+<div class="card-deck">
+<% @users.each do |user| %>
+  <div class="card" style="width: 18rem;">
+  <% if user.avatar .attached? %>
+    <%= image_tag user.avatar, :size => '200x200', class: 'maru' %>
+  <% else %>
+    <%= image_tag 'noimage.png', :size => '200x200', class: 'maru' %>
+  <% end %>
+  <div class="card-body text-center">
+    <h5 class="card-title"><%= user.name %>(<%= user.gender %>バス)</h5>
+    <p class="card-text">チーム名・学校名: <%= user.team %><p>
+    <p class="card-text">都道府県: <%= user.prefecture.name %><p>
+  </div>
+  <div class="card-footer text-center">
+    <%= link_to '詳細', user_path(user), class: "btn btn-primary" %>
+    <%= form_tag :chat_index, method: :post do %>
+      <input name="user_id" type="hidden" value="<%= user.id %>" />
+      <%= submit_tag 'チャットを開く', class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
+<% end %>
+</div>

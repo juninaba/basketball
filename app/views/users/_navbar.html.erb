@@ -11,7 +11,10 @@
         <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'nav-link' %>
       </li>
       <li class="nav-item">
-        <a href="/users/<%= current_user.id %>" class='nav-link list_item' >マイページ</a>
+        <a href="/users/<%= current_user.id %>" class='nav-link' >マイページ</a>
+      </li>
+      <li class="nav-item">
+        <%= link_to 'マッチング済み', matching_index_path, class: "nav-link" %>
       </li>
     </ul>
     <% else %>
