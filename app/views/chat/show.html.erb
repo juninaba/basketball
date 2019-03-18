@@ -1,0 +1,26 @@
+<div class="chatPage">
+  <header class="header">
+  <%= link_to "", matching_index_path, class: "linkToMatching" %>
+    <div class="chatPartner">
+      <div class="chatPartner_img">
+        <% if @room_user.avatar .attached? %>
+          <%= image_tag @room_user.avatar %>
+        <% else %>
+          <img src="http://schoolshop-lab.jp/wp-content/uploads/2018/11/240ec862387d03003cb4c41cd93cb0be.png" alt="画像はありません">
+        <% end %>
+      </div>
+      <div class="chatPartner_name"><%= @room_user.name %></div>
+    </div>
+  </header>
+  <div class="container">
+    <div class="messagesArea messages">
+      <%= render @room_messages %>
+    </div>
+  </div>
+  <form class="messageInputForm">
+    <div class='container'>
+      <input type="text" data-behavior="room_speaker" class="messageInputForm_input" placeholder="メッセージを入力...">
+    </div>
+  </form>
+</div>
+

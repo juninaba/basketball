@@ -3,7 +3,7 @@
   <% if @user.avatar .attached? %>
     <%= image_tag @user.avatar, :size => '200x200', class: 'maru' %>
   <% else %>
-    <img src="http://schoolshop-lab.jp/wp-content/uploads/2018/11/240ec862387d03003cb4c41cd93cb0be.png" alt="画像はありません" width="200" height="200" class="maru">
+    <%= image_tag 'noimage.png', :size => '200x200', class: 'maru' %>
   <% end %>
   <div class="card-body text-center">
     <h5 class="card-title"><%= @user.nickname %></h5>
@@ -47,27 +47,4 @@
     </div>
   <% end %>
 </div>
-<% if current_user.id == @user.id %>
-<h5 class="card-title text-center">マッチング済み</h5>
-<div class="card-deck">
-<% @users.each do |user| %>
-  <div class="card" style="width: 18rem;">
-  <% if user.avatar .attached? %>
-    <%= image_tag user.avatar, :size => '200x200', class: 'maru' %>
-  <% else %>
-    <img src="http://schoolshop-lab.jp/wp-content/uploads/2018/11/240ec862387d03003cb4c41cd93cb0be.png" alt="画像はありません" width="200" height="200" class="maru">
-  <% end %>
-  <div class="card-body text-center">
-    <h5 class="card-title"><%= user.name %>(<%= user.gender %>バス)</h5>
-    <p class="card-text">チーム名・学校名: <%= user.team %><p>
-    <p class="card-text">都道府県: <%= user.prefecture.name %><p>
-  </div>
-  <div class="card-footer text-center">
-    <%= link_to '詳細', user_path(user), class: "btn btn-primary" %>
-    <%= link_to 'DM', room_path(user), class: "btn btn-primary" %>
-  </div>
-</div>
-<% end %>
-</div>
-<%= paginate(@users) %>
-<% end %>
+
