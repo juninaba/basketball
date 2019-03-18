@@ -16,5 +16,7 @@ Rails.application.routes.draw do
 
   resources :relationships, only: [:create, :destroy]
   # mount ActionCable.server => '/cable'
+  resources :matching, only: %i(index)
+  resources :chat, only: %i(create show)
 
 end
