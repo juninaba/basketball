@@ -4,24 +4,22 @@
     検索結果
   </h5>
 </header>
-<div class="card-deck">
-  <% @users.each do |user| %>
-    <div class="card" style="width: 18rem;">
-      <% if user.avatar .attached? %>
-        <%= image_tag user.avatar, :size => '200x200', class: 'maru' %>
-      <% else %>
-        <img src="http://schoolshop-lab.jp/wp-content/uploads/2018/11/240ec862387d03003cb4c41cd93cb0be.png" alt="画像はありません" width="200" height="200" class="maru">
-      <% end %>
-      <div class="card-body text-center">
-        <h5 class="card-title"><%= user.nickname %>(<%= user.gender %>バス)</h5>
-        <p class="card-text">チーム名・学校名: <%= user.team %><p>
-        <p class="card-text">都道府県: <%= user.prefecture.name %><p>
-      </div>
-      <div class="card-footer text-center">
-        <%= link_to '詳細', user_path(user), class: "btn btn-primary" %>
-      </div>
+<% @users.each do |user| %>
+  <div class="card mx-auto" style="width: 20rem;">
+    <% if user.avatar .attached? %>
+      <%= image_tag user.avatar, class: 'maru' %>
+    <% else %>
+      <%= image_tag 'noimage.png', class: 'maru' %>
+    <% end %>
+    <div class="card-body text-center">
+      <h5 class="card-title"><%= user.nickname %>(<%= user.gender %>バス)</h5>
+      <p class="card-text">チーム名・学校名: <%= user.team %><p>
+      <p class="card-text">都道府県: <%= user.prefecture.name %><p>
     </div>
-  <% end %>
-</div>
+    <div class="card-footer text-center">
+      <%= link_to '詳細', user_path(user), class: "btn btn-primary" %>
+    </div>
+  </div>
+<% end %>
 <%= paginate(@users) %>
 

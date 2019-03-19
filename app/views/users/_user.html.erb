@@ -1,8 +1,8 @@
 <div class="card">
     <% if user.avatar .attached? %>
-      <%= image_tag user.avatar, :size => '200x200', class: 'maru' %>
+      <%= image_tag user.avatar, class: 'maru' %>
     <% else %>
-      <%= image_tag 'noimage.png', :size => '200x200', class: 'maru' %>
+      <%= image_tag 'noimage.png', class: 'maru' %>
     <% end %>
   <div class="card-body text-center">
     <h5 class="card-title"><%= user.nickname %>(<%= user.gender %>バス)</h5>

@@ -1,11 +1,10 @@
 <%= render partial: 'users/navbar' %>
-<div class="card-deck">
 <% @users.each do |user| %>
-  <div class="card" style="width: 18rem;">
+  <div class="card mx-auto" style="width: 20rem;">
   <% if user.avatar .attached? %>
-    <%= image_tag user.avatar, :size => '200x200', class: 'maru' %>
+    <%= image_tag user.avatar, class: 'maru' %>
   <% else %>
-    <%= image_tag 'noimage.png', :size => '200x200', class: 'maru' %>
+    <%= image_tag 'noimage.png', class: 'maru' %>
   <% end %>
   <div class="card-body text-center">
     <h5 class="card-title"><%= user.name %>(<%= user.gender %>バス)</h5>
@@ -14,11 +13,10 @@
   </div>
   <div class="card-footer text-center">
     <%= link_to '詳細', user_path(user), class: "btn btn-primary" %>
-    <%= form_tag :chat_index, method: :post do %>
+    <%= form_tag :chat_index, method: :post, class: "dm" do %>
       <input name="user_id" type="hidden" value="<%= user.id %>" />
-      <%= submit_tag 'チャットを開く', class: "btn btn-primary" %>
+      <%= submit_tag 'DM', class: "btn btn-primary" %>
     <% end %>
   </div>
 </div>
 <% end %>
-</div>

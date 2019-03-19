@@ -1,9 +1,9 @@
 <%= render partial: 'navbar' %>
-<div class="card" style="width: 18rem;">
+<div class="card" style="width: 20rem;">
   <% if @user.avatar .attached? %>
-    <%= image_tag @user.avatar, :size => '200x200', class: 'maru' %>
+    <%= image_tag @user.avatar, class: 'maru' %>
   <% else %>
-    <%= image_tag 'noimage.png', :size => '200x200', class: 'maru' %>
+    <%= image_tag 'noimage.png', class: 'maru' %>
   <% end %>
   <div class="card-body text-center">
     <h5 class="card-title"><%= @user.nickname %></h5>
@@ -16,7 +16,7 @@
     <% end %>
   </div>
 </div>
-<div class="card" style="width:95%;">
+<div class="card">
   <% if @detail %>
     <div class="card-body">
       <h5 class="card-title">自己紹介</h5>

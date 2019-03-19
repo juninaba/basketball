@@ -2,6 +2,11 @@
   position: relative;
 }
 
+input {
+  border: 1px solid #ced4da;
+  border-radius: .25rem;
+}
+
 .title {
   position: absolute;
   top: 20px;
@@ -40,6 +45,8 @@
   border: solid #bbb;
   border-radius: 100px;
   margin: 10px auto;
+  height: 200px;
+  width: 200px;
 }
 
 .card-deck .card:nth-child(n+5){
@@ -64,4 +71,28 @@
 
 .search-title {
   margin-top: 30px;
+}
+
+.dm {
+  display: inline-block;
+}
+
+@media (max-width: 767.98px) {
+  .title {
+    top: 10px;
+    left: 10px;
+    font-size: 1.5rem;
+ }
+ .card-deck {
+    padding: 0;
+ }
+ .dropdown-menu {
+    width: 200px;
+ }
+ .maru {
+    border-radius: 60px;
+    margin: 5px auto;
+    height: 120px;
+    width: 120px;
+ }
 }
