@@ -6,7 +6,7 @@
         <% if @room_user.avatar .attached? %>
           <%= image_tag @room_user.avatar %>
         <% else %>
-          <img src="http://schoolshop-lab.jp/wp-content/uploads/2018/11/240ec862387d03003cb4c41cd93cb0be.png" alt="画像はありません">
+          <%= image_tag 'noimage.png' %>
         <% end %>
       </div>
       <div class="chatPartner_name"><%= @room_user.name %></div>
