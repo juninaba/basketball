@@ -12,14 +12,19 @@
       <%= image_tag 'noimage.png', class: 'maru' %>
     <% end %>
     <div class="card-body text-center">
-      <h5 class="card-title"><%= user.nickname %>(<%= user.gender %>バス)</h5>
-      <p class="card-text">チーム名・学校名: <%= user.team %><p>
+      <h5 class="card-title"><%= user.nickname %></h5>
+      <% if user.gender == "男" %>
+        <p class="card-text">チーム名・学校名: <%= user.team %><i class="fas fa-male male"></i><p>
+      <% else %>
+        <p class="card-text">チーム名・学校名: <%= user.team %><i class="fas fa-female female"></i><p>
+      <% end %>
       <p class="card-text">都道府県: <%= user.prefecture.name %><p>
     </div>
     <div class="card-footer text-center">
-      <%= link_to '詳細', user_path(user), class: "btn btn-primary" %>
+      <% if user_signed_in? %>
+        <%= link_to '詳細', user_path(user), class: "btn btn-primary" %>
+      <% end %>
     </div>
   </div>
 <% end %>
-<%= paginate(@users) %>
 
