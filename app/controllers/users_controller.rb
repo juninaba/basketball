@@ -1,6 +1,15 @@
 class UsersController < ApplicationController
   def index
-    @users = User.order("RAND()")
+    @users = User.all
+    @football = User.where(sport_id: 1)
+    @tabletennis = User.where(sport_id: 2)
+    @tennis = User.where(sport_id: 3)
+    @handball = User.where(sport_id: 4)
+    @basketball = User.where(sport_id: 5)
+    @badminton = User.where(sport_id: 6)
+    @volleyball = User.where(sport_id: 7)
+    @softbaseball = User.where(sport_id: 8)
+    @hardbaseball = User.where(sport_id: 9)
   end
 
   def show
