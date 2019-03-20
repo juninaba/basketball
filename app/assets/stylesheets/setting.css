@@ -2,8 +2,25 @@
   position: relative;
 }
 
-.slider-arrow {
-  z-index: 1;
+.slick-contents {
+  padding: 0 35px;
+  margin-top: 40px;
+}
+
+.slick-contents__title {
+  text-align: center;
+  margin: 0;
+  font-weight: bold;
+}
+
+.male {
+  color: blue;
+  margin-left: 5px;
+}
+
+.female {
+  color: red;
+  margin-left: 5px;
 }
 
 .title {

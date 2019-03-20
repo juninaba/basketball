@@ -1,10 +1,95 @@
-<div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel" data-interval="3000" data-wrap="true">
-  <div class="carousel-inner">
-    <%= render partial: 'slide' %>
-  </div>
+<div>
+  <img src="/assets/slide1.jpg" class="d-block w-100" alt="...">
+  <%= render partial: 'menu' %>
 </div>
-  <div class="multiple-item">
-    <% @users.each do |user| %>
-        <%= render partial: 'user', locals: {user: user} %>
-    <% end %>
+<% unless @football == [] %>
+  <div class="slick-contents">
+    <h3 class="slick-contents__title">サッカー<i class="far fa-futbol"></i></h3>
+    <div class="multiple-item">
+      <% @football.each do |user| %>
+          <%= render partial: 'user', locals: {user: user} %>
+      <% end %>
+    </div>
   </div>
+<% end %>
+<% unless @tabletennis == [] %>
+  <div class="slick-contents">
+    <h3 class="slick-contents__title">卓球<i class="fas fa-table-tennis"></i></h3>
+    <div class="multiple-item">
+      <% @tabletennis.each do |user| %>
+          <%= render partial: 'user', locals: {user: user} %>
+      <% end %>
+    </div>
+  </div>
+<% end %>
+<% unless @tennis == [] %>
+  <div class="slick-contents">
+    <h3 class="slick-contents__title">テニス</h3>
+    <div class="multiple-item">
+      <% @tennis.each do |user| %>
+          <%= render partial: 'user', locals: {user: user} %>
+      <% end %>
+    </div>
+  </div>
+<% end %>
+<% unless @handball == [] %>
+  <div class="slick-contents">
+    <h3 class="slick-contents__title">ハンドボール</h3>
+    <div class="multiple-item">
+      <% @handball.each do |user| %>
+          <%= render partial: 'user', locals: {user: user} %>
+      <% end %>
+    </div>
+  </div>
+<% end %>
+<% unless @basketball == [] %>
+  <div class="slick-contents">
+    <h3 class="slick-contents__title">バスケットボール<i class="fas fa-basketball-ball"></i></h3>
+    <div class="multiple-item">
+      <% @basketball.each do |user| %>
+          <%= render partial: 'user', locals: {user: user} %>
+      <% end %>
+    </div>
+  </div>
+<% end %>
+<% unless @badminton == [] %>
+  <div class="slick-contents">
+    <h3 class="slick-contents__title">バドミントン</h3>
+    <div class="multiple-item">
+      <% @badminton.each do |user| %>
+          <%= render partial: 'user', locals: {user: user} %>
+      <% end %>
+    </div>
+  </div>
+<% end %>
+<% unless @volleyball == [] %>
+  <div class="slick-contents">
+    <h3 class="slick-contents__title">バレーボール<i class="fas fa-volleyball-ball"></i></h3>
+    <div class="multiple-item">
+      <% @volleyball.each do |user| %>
+          <%= render partial: 'user', locals: {user: user} %>
+      <% end %>
+    </div>
+  </div>
+<% end %>
+<% unless @softbaseball == [] %>
+  <div class="slick-contents">
+    <h3 class="slick-contents__title">軟式野球<i class="fas fa-baseball-ball"></i></h3>
+    <div class="multiple-item">
+      <% @softbaseball.each do |user| %>
+          <%= render partial: 'user', locals: {user: user} %>
+      <% end %>
+    </div>
+  </div>
+<% end %>
+<% unless @hardbaseball == [] %>
+  <div class="slick-contents">
+    <h3 class="slick-contents__title">硬式野球<i class="fas fa-baseball-ball"></i></h3>
+    <div class="multiple-item">
+      <% @hardbaseball.each do |user| %>
+          <%= render partial: 'user', locals: {user: user} %>
+      <% end %>
+    </div>
+  </div>
+<% end %>
+

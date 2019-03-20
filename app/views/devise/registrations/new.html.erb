@@ -23,13 +23,18 @@
       </div>
 
       <div class="field">
+        <%= f.label :スポーツ %>
+        <%= f.collection_select :sport_id, Sport.all, :id, :name, include_blank: '選択して下さい' %>
+      </div>
+
+      <div class="field">
         <%= f.label :チーム名・学校名 %><br />
         <%= f.text_field :team, autofocus: true %>
       </div>
 
       <div class="field">
-        <label><%= f.radio_button :gender, "男" %> 男バス </label>
-        <label><%= f.radio_button :gender, "女" %> 女バス</label>
+        <label><%= f.radio_button :gender, "男" %> 男チーム </label>
+        <label><%= f.radio_button :gender, "女" %> 女チーム</label>
       </div>
 
       <div class="field">
