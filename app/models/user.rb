@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   belongs_to :prefecture
+  belongs_to :sport
   #ユーザーが削除されたら関連するdetailも削除される
   has_one :detail, dependent: :destroy
   has_many :messages
@@ -14,6 +15,7 @@ class User < ApplicationRecord
 
   validates :name, presence: true
   validates :prefecture_id, presence: :true
+  validates :sport_id, presence: :true
   validates :team, presence: :true
   validates :gender, presence: :true
   validates :nickname, presence: true, length: {maximum: 6}
