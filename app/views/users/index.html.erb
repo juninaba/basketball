@@ -3,8 +3,8 @@
     <%= render partial: 'slide' %>
   </div>
 </div>
-<div class="card-deck">
-  <% @users.each do |user| %>
-    <%= render partial: 'user', locals: {user: user} %>
-  <% end %>
-</div>
+  <div class="multiple-item">
+    <% @users.each do |user| %>
+        <%= render partial: 'user', locals: {user: user} %>
+    <% end %>
+  </div>
