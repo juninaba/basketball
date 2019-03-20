@@ -2,6 +2,10 @@
   position: relative;
 }
 
+.slider-arrow {
+  z-index: 1;
+}
+
 .title {
   position: absolute;
   top: 20px;
@@ -44,10 +48,6 @@
   width: 200px;
 }
 
-.card-deck .card:nth-child(n+5){
-  display: none;
-}
-
 .contents {
   margin: 40px 0 40px 200px;
 }
@@ -72,6 +72,24 @@
 
 .dm {
   display: inline-block;
+}
+
+.slider-arrow {
+  position: absolute;
+  top: 50%;
+  height: 36px;
+  margin-top: -18px;
+  color: black;
+  line-height: 36px;
+  font-size: 28px;
+  cursor: pointer;
+  z-index: 10;
+}
+.slider-prev {
+  left: 0;
+}
+.slider-next {
+  right: 0;
 }
 
 @media (max-width: 767.98px) {
