@@ -1,0 +1,21 @@
+<div class="card mx-auto" style="width: 20rem;">
+    <% if user.avatar .attached? %>
+      <%= image_tag user.avatar, class: 'maru' %>
+    <% else %>
+      <%= image_tag 'noimage.png', class: 'maru' %>
+    <% end %>
+    <div class="card-body text-center">
+      <h5 class="card-title"><%= user.nickname %></h5>
+      <% if user.gender == "男" %>
+        <p class="card-text"><%= user.team %><i class="fas fa-male male"></i><p>
+      <% else %>
+        <p class="card-text"><%= user.team %><i class="fas fa-female female"></i><p>
+      <% end %>
+      <p class="card-text"><%= user.prefecture.name %><p>
+    </div>
+    <div class="card-footer text-center">
+      <% if user_signed_in? %>
+        <%= link_to '詳細', user_path(user), class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>

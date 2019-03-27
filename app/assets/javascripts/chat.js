@@ -6,6 +6,7 @@ if(/chat/.test(window.location.pathname)) {
     disconnected: function() {},
     received: function(data) {
       $('.messages').append(data['content']);
+      $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');
     },
     speak: function(message) {
       return this.perform('speak', {
@@ -22,4 +23,9 @@ if(/chat/.test(window.location.pathname)) {
       return event.preventDefault();
     }
   });
+  $(function() {
+    $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');
+  });
 }
+
+
