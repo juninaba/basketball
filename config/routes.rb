@@ -2,7 +2,6 @@ Rails.application.routes.draw do
   devise_for :users
   root 'users#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  resources :prefectures
 
   resources :users do
     member do
@@ -13,9 +12,8 @@ Rails.application.routes.draw do
   end
 
   resources :rooms, only: [:show, :index, :new]
-
+  resources :prefectures, only: %i(index)
   resources :relationships, only: [:create, :destroy]
-  # mount ActionCable.server => '/cable'
   resources :matching, only: %i(index)
   resources :chat, only: %i(create show)
 
