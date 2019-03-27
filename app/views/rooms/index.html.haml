@@ -1,0 +1,6 @@
+= render partial: 'users/navbar'
+%div
+  %ul
+    - @rooms.each do |room|
+      %li= link_to "ROOM#{room.id}", "/rooms/#{room.id}"
+  %li= link_to "NEW ROOM", "/rooms/new"

@@ -1,0 +1,27 @@
+.card
+  - if user.avatar .attached?
+    = image_tag user.avatar, class: 'maru'
+  - else
+    = image_tag 'noimage.png', class: 'maru'
+  .card-body.text-center
+    %h5.card-title= user.nickname
+    - if user.gender == "男"
+      %p.card-text
+        = user.team
+        %i.fas.fa-male.male
+      %p
+    - else
+      %p.card-text
+        = user.team
+        %i.fas.fa-female.female
+      %p
+    %p.card-text= user.prefecture.name
+    %p
+  .card-footer
+    - if user_signed_in?
+      / text-centerはcssでのtext-align: center;
+      .text-center
+        - if current_user.id == user.id
+          %a.btn.btn-primary{:href => "/users/#{current_user.id}"} マイページ
+        - else
+          %a.btn.btn-primary{:href => "/users/#{user.id}"} 詳細

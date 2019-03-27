@@ -1,0 +1,17 @@
+%body
+  .chatPage
+    %header.header
+      = link_to "", matching_index_path, class: "linkToMatching"
+      .chatPartner
+        .chatPartner_img
+          - if @room_user.avatar .attached?
+            = image_tag @room_user.avatar
+          - else
+            = image_tag 'noimage.png'
+        .chatPartner_name= @room_user.name
+    .container
+      .messagesArea.messages
+        = render @room_messages
+    %form.messageInputForm
+      .container
+        %input.messageInputForm_input{"data-behavior" => "room_speaker", :placeholder => "メッセージを入力...", :type => "text"}/

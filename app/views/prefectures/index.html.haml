@@ -1,0 +1,7 @@
+%body
+  = render partial: 'users/navbar'
+  %header
+    %h5.card-title.text-center.search-title
+      検索結果
+  - @users.each do |user|
+    = render partial: 'users/user2', locals: {user: user}
