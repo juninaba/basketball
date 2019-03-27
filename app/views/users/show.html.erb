@@ -8,11 +8,11 @@
   <div class="card-body text-center">
     <h5 class="card-title"><%= @user.nickname %></h5>
     <% if @user.gender == "男" %>
-      <p class="card-text">チーム名・学校名: <%= @user.team %><i class="fas fa-male male"></i><p>
+      <p class="card-text"><%= @user.team %><i class="fas fa-male male"></i><p>
     <% else %>
-      <p class="card-text">チーム名・学校名: <%= @user.team %><i class="fas fa-female female"></i><p>
+      <p class="card-text"><%= @user.team %><i class="fas fa-female female"></i><p>
     <% end %>
-    <p class="card-text">都道府県: <%= @user.prefecture.name %><p>
+    <p class="card-text"><%= @user.prefecture.name %><p>
     <%= render 'follow_form' %>
     <%= render 'stats' %>
     <% if current_user.id == @user.id %>

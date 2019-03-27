@@ -7,6 +7,10 @@
   margin-top: 40px;
 }
 
+/*.slick-contents a {
+  display: inline-block;
+}*/
+
 .slick-contents__title {
   text-align: center;
   margin: 0;
@@ -101,6 +105,7 @@
   font-size: 28px;
   cursor: pointer;
   z-index: 10;
+  color: #ced4da;
 }
 .slider-prev {
   left: 0;

@@ -1,22 +1,4 @@
 <%= render partial: 'navbar' %>
 <% @user.followings.each do |user| %>
-  <div class="card mx-auto" style="width: 20rem;">
-  <% if user.avatar .attached? %>
-    <%= image_tag user.avatar, :size => '200x200', class: 'maru' %>
-  <% else %>
-    <%= image_tag 'noimage.png', class: 'maru' %>
-  <% end %>
-  <div class="card-body text-center">
-    <h5 class="card-title"><%= user.nickname %></h5>
-    <% if user.gender == "男" %>
-      <p class="card-text">チーム名・学校名: <%= user.team %><i class="fas fa-male male"></i><p>
-    <% else %>
-      <p class="card-text">チーム名・学校名: <%= user.team %><i class="fas fa-female female"></i><p>
-    <% end %>
-    <p class="card-text">都道府県: <%= user.prefecture.name %><p>
-  </div>
-  <div class="card-footer text-center">
-    <%= link_to '詳細', user_path(user), class: "btn btn-primary" %>
-  </div>
-</div>
+  <%= render partial: 'users/user2', locals: {user: user} %>
 <% end %>
