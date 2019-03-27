@@ -1,0 +1,14 @@
+= render partial: 'users/navbar'
+.form_form
+  %h1 Chat room
+  = succeed "," do
+    #messages
+  = @room.id
+  "&gt;
+  / Messageの一覧を表示
+  = render @messages
+%form
+  %label
+    \&#x30E1;&#x30C3;&#x30BB;&#x30FC;&#x30B8;&#x3092;&#x5165;&#x529B;:#{@user.name}&#x3055;&#x3093;&#x3078;
+  %br
+    %input{"data-behavior" => "room_speaker", :type => "text"}

@@ -1,0 +1,69 @@
+%div
+  %img.d-block.w-100{:alt => "...", :src => "/assets/slide1.jpg"}/
+  = render partial: 'menu'
+- unless @football == []
+  .slick-contents
+    %h3.slick-contents__title
+      サッカー
+      %i.far.fa-futbol
+    .multiple-item
+      - @football.each do |user|
+        = render partial: 'user', locals: {user: user}
+- unless @tabletennis == []
+  .slick-contents
+    %h3.slick-contents__title
+      卓球
+      %i.fas.fa-table-tennis
+    .multiple-item
+      - @tabletennis.each do |user|
+        = render partial: 'user', locals: {user: user}
+- unless @tennis == []
+  .slick-contents
+    %h3.slick-contents__title テニス
+    .multiple-item
+      - @tennis.each do |user|
+        = render partial: 'user', locals: {user: user}
+- unless @handball == []
+  .slick-contents
+    %h3.slick-contents__title ハンドボール
+    .multiple-item
+      - @handball.each do |user|
+        = render partial: 'user', locals: {user: user}
+- unless @basketball == []
+  .slick-contents
+    %h3.slick-contents__title
+      バスケットボール
+      %i.fas.fa-basketball-ball
+    .multiple-item
+      - @basketball.each do |user|
+        = render partial: 'user', locals: {user: user}
+- unless @badminton == []
+  .slick-contents
+    %h3.slick-contents__title バドミントン
+    .multiple-item
+      - @badminton.each do |user|
+        = render partial: 'user', locals: {user: user}
+- unless @volleyball == []
+  .slick-contents
+    %h3.slick-contents__title
+      バレーボール
+      %i.fas.fa-volleyball-ball
+    .multiple-item
+      - @volleyball.each do |user|
+        = render partial: 'user', locals: {user: user}
+- unless @softbaseball == []
+  .slick-contents
+    %h3.slick-contents__title
+      軟式野球
+      %i.fas.fa-baseball-ball
+    .multiple-item
+      - @softbaseball.each do |user|
+        = render partial: 'user', locals: {user: user}
+- unless @hardbaseball == []
+  .slick-contents
+    %h3.slick-contents__title
+      硬式野球
+      %i.fas.fa-baseball-ball
+    .multiple-item
+      - @hardbaseball.each do |user|
+        = render partial: 'user', locals: {user: user}

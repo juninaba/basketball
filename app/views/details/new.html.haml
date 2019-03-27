@@ -1,0 +1,18 @@
+= render partial: 'users/navbar'
+.contents
+  = form_for [@user, @detail] do |f|
+    %div{:style => "margin: 30px 0"}
+      %p 自己紹介
+      = f.text_area :text1, placeholder: '書いてね', style: 'width: 80%;height: 100px;'
+    %div{:style => "margin: 30px 0"}
+      %p 今までの成績
+      = f.text_area :text2, placeholder: '書いてね', style: 'width: 80%;height: 100px;'
+    %div{:style => "margin: 30px 0"}
+      %p 昨年度の成績
+      = f.text_area :text3, placeholder: '書いてね', style: 'width: 80%;height: 100px;'
+    %div{:style => "margin: 30px 0"}
+      %p 今年度の成績
+      = f.text_area :text4, placeholder: '書いてね', style: 'width: 80%;height: 100px;'
+    %div
+      = button_tag type: "submit", class: "nav-link btn btn-primary" do
+        投稿する

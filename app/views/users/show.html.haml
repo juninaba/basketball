@@ -1,0 +1,49 @@
+= render partial: 'navbar'
+.card{:style => "width: 20rem;"}
+  - if @user.avatar .attached?
+    = image_tag @user.avatar, class: 'maru'
+  - else
+    = image_tag 'noimage.png', class: 'maru'
+  .card-body.text-center
+    %h5.card-title= @user.nickname
+    - if @user.gender == "男"
+      %p.card-text
+        = @user.team
+        %i.fas.fa-male.male
+      %p
+    - else
+      %p.card-text
+        = @user.team
+        %i.fas.fa-female.female
+      %p
+    %p.card-text= @user.prefecture.name
+    %p
+      = render 'follow_form'
+      = render 'stats'
+      - if current_user.id == @user.id
+        = link_to '編集', edit_user_registration_path, class: 'nav-link btn btn-primary'
+.card
+  - if @detail
+    .card-body
+      %h5.card-title 自己紹介
+      %p.card-text= @detail.text1
+      %h5.card-title 今までの成績
+      %p.card-text= @detail.text2
+      %h5.card-title 昨年度の成績
+      %p.card-text= @detail.text3
+      %h5.card-title 今年度の成績
+      %p.card-text= @detail.text4
+      - if current_user.id == @user.id
+        %a.btn.btn-primary{:href => "/users/#{@user.id}/details/#{@detail.id}/edit"} 編集
+  - else
+    .card-body
+      %h5.card-title 自己紹介
+      %p.card-text 記入してください
+      %h5.card-title 今までの成績
+      %p.card-text 記入してください
+      %h5.card-title 昨年度の成績
+      %p.card-text 記入してください
+      %h5.card-title 今年度の成績
+      %p.card-text 記入してください
+      - if current_user.id == @user.id
+        %a.btn.btn-primary{:href => "/users/#{@user.id}/details/new"} 編集
