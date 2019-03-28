@@ -18,7 +18,7 @@
   width: 100%;
 }
 
-@media (max-width: 767.98px) {
+@media (max-width: 896px) {
   .single {
     width: 300px;
   }
