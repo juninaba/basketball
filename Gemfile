@@ -75,3 +75,4 @@ gem 'bxslider-rails'
 gem 'jquery-rails'
 gem 'haml-rails'
 gem 'erb2haml'
+gem "aws-sdk-s3", require: false
